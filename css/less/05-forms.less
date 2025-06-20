@@ -1,0 +1,118 @@
+/* ----------------------------------- *\
+			forms elements styles
+\* ----------------------------------- */
+.frm-main-search {
+	display: block;
+	position: relative;
+	line-height: 1;
+	height: 53px;
+	border-radius: 12px;
+	background: var(--clr-bg-light);
+	border: 1px solid var(--clr-bg-light);
+	.form-input {
+		height: 50px;
+		border-radius: 0;
+		border: none;
+		background: none;
+		padding: 0 55px 0 55px;
+	}
+	&:before {
+		content: "";
+		display: block;
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		background: url(../img/icons/search.svg) center no-repeat;
+		background-size: 100% auto;
+		top: 50%;left: 30px;
+		margin: -12px 0 0 -12px;
+		z-index: 2;
+		pointer-events: none;
+		filter: var(--filterAttToLight);
+	}
+	.btn {
+		width: 60px;
+		height: 50px;
+		position: absolute;
+		top: 0;right: 0;
+		z-index: 2;
+		border-radius: 0 12px 12px 0;;
+	}
+}
+.frm-row,
+.frm-field,
+.frm-row-submit {
+    display: flex;
+    flex-wrap: wrap;
+	position: relative;
+	line-height: 1;
+}
+.frm-field {
+    display: block;
+    width: 100%;
+}
+.frm-select {
+	position: relative;
+	display: block;
+	overflow: hidden;
+    line-height: 1;
+	input {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 0;height: 0;
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+		&:checked {
+			&~label {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	label {
+		display: block;
+		position: relative;
+		cursor: pointer;
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+		&:after {
+			opacity: 0;
+		}
+	}
+}
+
+
+.frm-select {
+	input {
+		&:checked {
+			&~label {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	label {
+		&:before, &:after {
+			
+		}
+		&:after {
+			border-radius: 0;
+			border: none;
+			background: url(../img/icons/chk.svg) center / 24px auto no-repeat;
+			opacity: 0;
+		}
+	}
+	a {
+		color: inherit;
+		&:hover {
+			color: var(--clr-att);
+		}
+	}
+}
