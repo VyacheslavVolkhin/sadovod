@@ -2508,6 +2508,20 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex-align: end;
       align-items: flex-end;
 }
+.title-box:has(.action-wrap) {
+  -ms-flex-align: center;
+      align-items: center;
+}
+.title-box .action-wrap {
+  -ms-flex: 1;
+      flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: 5px 0;
+  margin-top: 5px;
+}
 .title-box .section-title {
   max-width: 100%;
   -ms-flex-negative: 0;
@@ -2519,7 +2533,15 @@ html.with-fancybox body.hide-scrollbar {
 .title-box .section-title:last-child {
   padding-right: 0;
 }
-.title-box a,
+.title-box .section-title .link-main {
+  font-weight: 400;
+}
+.title-box .section-title .link-main:not(:hover) {
+  color: inherit;
+}
+.title-box .section-title .link-main:not([href]) {
+  color: inherit;
+}
 .title-box .link-main {
   margin-top: 5px;
   display: inline-block;
@@ -2529,7 +2551,6 @@ html.with-fancybox body.hide-scrollbar {
   max-width: 100%;
   line-height: 1;
 }
-.title-box a:hover,
 .title-box .link-main:hover {
   color: var(--clr-att);
 }
@@ -3342,6 +3363,9 @@ html.with-fancybox body.hide-scrollbar {
       order: 2;
 }
 @media (max-width: 1023px) {
+  .title-box .title-small {
+    font-size: 18px;
+  }
   .filter-panel-box .filter-selected-wrap {
     margin-left: calc(var(--paddingContainer) * -1);
     margin-right: calc(var(--paddingContainer) * -1);
@@ -3580,6 +3604,9 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (min-width: 1024px) {
+  .title-box {
+    margin-bottom: 30px;
+  }
   .article-box {
     margin-bottom: 9rem;
   }
