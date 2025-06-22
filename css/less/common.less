@@ -715,7 +715,7 @@ add to head box
 .tile-photo {
     //transform: translateZ(0);
 }
-.button-title-border {
+.button-title-border, .title-border {
 	border-bottom: 1px solid;
 }
 .border-dashed {
@@ -800,24 +800,24 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 0 -5px -5px -5px;
+	margin: 0 -8px 0 -8px;
 	position: relative;
 	width: auto;
 	.swiper-pagination-bullet {
 		display: block;
-		width: 10px;height: 10px;
+		width: 12px;height: 12px;
 		border-radius: 50%;
 		background: #fff;
-		border: 2px solid var(--clr-light);
+		border: none;
 		opacity: 1;
 		transition: all ease 0.2s;
 		cursor: pointer;
 		padding: 0;
-		margin: 0 5px 5px 5px;
+		margin: 0 8px 8px 8px !important;
 		flex-shrink: 0;
+		z-index: 10;
 		&:hover, &.swiper-pagination-bullet-active {
 			background-color: var(--clr-att);
-			border-color: var(--clr-att);
 		}
 	}
 }

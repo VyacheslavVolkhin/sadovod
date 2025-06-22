@@ -6,6 +6,70 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	// filter actions
+	const filterButtonOpen = document.querySelector('.js-filter-open');
+	const filterButtonClose = document.querySelector('.js-filter-close');
+	if (filterButtonOpen) {
+		filterButtonOpen.addEventListener("click", function(event) {
+				document.body.classList.add("filter-active");
+				event.preventDefault();
+		})
+	}
+	if (filterButtonClose) {
+		filterButtonClose.addEventListener("click", function(event) {
+				document.body.classList.remove("filter-active");
+				event.preventDefault();
+		})
+	}
+
+	
+
+
+	//tooltip
+	tippy('.js-clear-tippy-helper', {
+			content(reference) {
+			const dataTitle = reference.getAttribute('data-title');
+			return dataTitle.replace(/ /g, '<br>');
+		},
+		allowHTML: true
+	});
+
+
+	//range slider
+	const sliderRange = document.getElementById('range-slider');
+	const minInput = document.getElementById('input-number-min');
+	const maxInput = document.getElementById('input-number-max');
+
+	const minRange = 0;
+	const maxRange = 160000;
+
+	if (sliderRange) {
+		noUiSlider.create(sliderRange, {
+			start: [18000, 128000],
+			connect: true,
+			range: {
+				'min': [minRange],
+				'max': [maxRange]
+			}
+		});
+		sliderRange.noUiSlider.on('update', (values, handle) => {
+			const value = values[handle];
+
+			if (handle === 0) {
+				minInput.value = Math.round(value);
+			} else {
+				maxInput.value = Math.round(value);
+			}
+		});
+		minInput.addEventListener('change', () => {
+			sliderRange.noUiSlider.set([minInput.value, null]);
+		});
+		maxInput.addEventListener('change', () => {
+			sliderRange.noUiSlider.set([null, maxInput.value]);
+		});
+	}
+
+
 	//mobile panel buttons
 	const buttonCatalog = document.querySelector('.js-button-catalog')
 	const buttonProfile = document.querySelector('.js-button-profile')
@@ -174,6 +238,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 			for (i = 0; i < popupElementSelectItem.length; i++) {
 				popupElementSelectItem[i].addEventListener('click', function (e) {
+					if (this.classList.contains('js-btn-sort')) {
+						if (this.classList.contains('active')) {
+							this.classList.toggle('active-up');
+						}
+					}
 					this.closest('.js-popup-wrap').classList.add('select-active')
 					if (this.closest('.js-popup-wrap').querySelector('.js-popup-block .active')) {
 						this.closest('.js-popup-wrap').querySelector('.js-popup-block .active').classList.remove('active')
@@ -336,6 +405,26 @@ document.addEventListener("DOMContentLoaded", function() {
 			1400: {
 				slidesPerView: 4,
 			},
+		},
+	
+	});
+
+
+	//slider gallery
+	const swiperSliderGallery = new Swiper('.slider-gallery .swiper', {
+		loop: false,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		autoHeight: true,
+		speed: 400,
+		pagination: {
+			el: '.slider-gallery-pagination',
+			clickable: true,
+		},
+		autoplay: false,
+		navigation: {
+			nextEl: '.btn-action-ico.ico-arrow.ico-arrow-next.button-slider-gallery-next',
+			prevEl: '.btn-action-ico.ico-arrow.ico-arrow-prev.button-slider-gallery-prev',
 		},
 	
 	});

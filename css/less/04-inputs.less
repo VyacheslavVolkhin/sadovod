@@ -71,6 +71,11 @@ select.form-input:required:invalid {
 	font-weight: 600;
 	color: #A0A0A0;
 	flex-shrink: 0;
+	.button-count {
+		display: inline;
+		font-weight: 400;
+		font-size: 14px;
+	}
 	&:before {
 		content: "";
 		display: block;
@@ -104,7 +109,41 @@ select.form-input:required:invalid {
 	font-size: 14px;
 	font-weight: bold;
 	padding: 0 2em;
-	&.button-disabled {
+	&.button-filter-selected {
+		height: 30px;
+		border-radius: 15px;
+		padding: 0 32px 0 14px;
+		border: none;
+		background: var(--clr-bg-light);
+		font-size: 14px;
+		color: #A0A0A0;
+		font-weight: 400;
+		cursor: default;
+		&:hover {
+			color: #A0A0A0;
+			background: var(--clr-bg-light);
+		}
+		.button-del {
+			width: 30px;height: 30px;
+			position: absolute;
+			top: 50%;right: 15px;
+			margin: -15px -15px 0 0;
+			z-index: 2;
+		}
+		.btn-action-ico {
+			&.ico-del {
+				&:not(:hover) {
+					&:before {
+						filter: var(--filterAttToLight)
+					}
+				}
+				&:before {
+					background-size: 14px auto;
+				}
+			}
+		}
+	}
+	&.button-disabled, &[disabled] {
 		pointer-events: none;
 		background: #e1e1e1;
 		border-color: #e1e1e1;
@@ -117,6 +156,18 @@ select.form-input:required:invalid {
 		color: #fff;
 		background-color: var(--clr-att-second);
 		border-color: var(--clr-att-second);
+	}
+	&.button-dashed {
+		border-width: 2px;
+		border-style: dashed;
+		border-color: #C3C3C3;
+		background-color: transparent;
+		color: var(--clr-base-light);
+		&:hover {
+			border-color: var(--clr-att);
+			background-color: transparent;
+			color: var(--clr-att);
+		}
 	}
 	&.button-second {
 		background: var(--clr-bg-dlight);
@@ -132,6 +183,62 @@ select.form-input:required:invalid {
 			.button-ico {
 				filter: brightness(0) invert(1);
 			}
+		}
+	}
+	&.button-select {
+		height: 55px;
+		border-radius: 15px;
+		border-color: var(--clr-bg-light);
+		background-color: var(--clr-bg-light);
+		padding: 0 40px 0 16px;
+		font-size: 16px;
+		font-weight: 400;
+		color: var(--clr-base-light);
+		width: 100%;
+		justify-content: flex-start;
+		text-align: left;
+		&[data-title] {
+			padding-top: 20px;
+			&:after {
+				content: attr(data-title);
+				font-size: 13px;
+				line-height: 20px;
+				position: absolute;
+				left: 0;right: 0;
+				top: 6px;
+				z-index: 2;
+				padding-left: 16px;
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			background: url(../img/icons/arrow-more.svg) center no-repeat;
+			background-size: 100% auto;
+			top: 50%;right: 30px;
+			margin: -12px -12px 0 0;
+			transition: all ease 0.2s;
+			rotate: 0deg;
+			filter: var(--filterAttToLight) opacity(0.8);
+			background-size: 32px auto;
+		}
+		&.active {
+			&:before {
+				rotate: 180deg;
+			}
+		}
+	}
+	&.button-dark {
+		background: var(--clr-base);
+		border-color: var(--clr-base);
+		color: #fff;;
+		&:hover {
+			background: var(--clr-att);
+			border-color: var(--clr-att);
+			color: #fff;
 		}
 	}
 	&.button-clear {
@@ -347,6 +454,31 @@ select.form-input:required:invalid {
 			}
 		}
 	}
+	&.button-ico-large {
+		&:before, &:after {
+			background-size: 48px auto;
+		}
+	}
+	&.button-hover {
+		&:not(:hover) {
+			&:before {
+				filter: var(--filterAttToLight);
+			}
+		}
+	}
+	&.button-hover-dark {
+		&:not(:hover) {
+			&:before {
+				filter: var(--filterAttToLight);
+			}
+		}
+	}
+	&.ico-share {
+		&:before {
+			background-image: url(../img/icons/share.svg);
+			background-size: 32px auto;
+		}
+	}
 	&.ico-fav {
 		&:before {
 			background-image: url(../img/icons/fav.svg);
@@ -354,6 +486,18 @@ select.form-input:required:invalid {
 		&:after {
 			background-image: url(../img/icons/fav-active.svg);
 			opacity: 0;
+		}
+	}
+	&.ico-download {
+		&:before {
+			background-image: url(../img/icons/download.svg);
+			background-size: 54% auto;
+		}
+	}
+	&.ico-back {
+		&:before {
+			background-image: url(../img/icons/arrow-back.svg);
+			background-size: 32px auto;
 		}
 	}
     &.ico-arrow {
@@ -388,7 +532,7 @@ select.form-input:required:invalid {
 			filter: brightness(0) grayscale(1);;
 		}
     }
-    &.ico-close {
+    &.ico-close, &.ico-del {
         &:before {
 			background-image: url(../img/icons/close.svg);
 		}
@@ -470,6 +614,7 @@ select.form-input:required:invalid {
 		line-height: 20px;
 	}
 }
+
 @media (min-width: 1024px) {
 	.btn-app {
 		img, svg {
