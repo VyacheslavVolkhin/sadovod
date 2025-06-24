@@ -5,6 +5,9 @@
 	--clr-base-vlight: #aaa;
 	--clr-att: #C71010;
 	--clr-att-second: #C90008;
+
+	--clr-alert: #C71010;
+	--clr-succefull: #0EB413;
 	
 	--clr-bg-light: #f7f7f7;
 	--clr-bg-dlight: #f0f0f0;
@@ -154,9 +157,12 @@ h6, .h6-title {
 	font-size: 28px;
 	line-height: 1;
 	font-weight: bold;
-}
-.text-light, .title-light {
-	color: var(--clr-light);
+	.title-text {
+		display: block;
+		font-size: 12px;
+		font-weight: 400;
+		color: var(--clr-base-light);
+	}
 }
 .text-base, .title-base {
 	color: var(--clr-base);
@@ -166,6 +172,12 @@ h6, .h6-title {
 }
 .text-att, .title-att {
 	color: var(--clr-att);
+}
+.text-alert, .title-alert {
+	color: var(--clr-alert);
+}
+.text-succefull, .title-succefull {
+	color: var(--clr-succefull);
 }
 .text-line, .title-line {
 	white-space: nowrap;
@@ -196,6 +208,11 @@ h6, .h6-title {
     :root {
         font-size: 8px;
     }
+	.h2-title, h2 {
+		&.title-small {
+			font-size: 18px;
+		}
+	}
 }
 @media (max-width: 767px) {
     :root {
@@ -210,6 +227,13 @@ h6, .h6-title {
 @media (min-width: 1024px) {
     :root {
     }
+	.h2-title, h2 {
+		.title-text {
+			font-size: 21px;
+			display: inline;
+			color: inherit;
+		}
+	}
 }
 @media (min-width: 1400px) {
     :root {

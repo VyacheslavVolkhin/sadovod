@@ -60,7 +60,7 @@ select.form-input:required:invalid {
     color: #ADADAD;
 }
 .btn-tab {
-	display: inline-block;
+	display: inline-flex;
 	height: 26px;
 	line-height: 26px;
 	white-space: nowrap;
@@ -75,6 +75,18 @@ select.form-input:required:invalid {
 		display: inline;
 		font-weight: 400;
 		font-size: 14px;
+	}
+	&[data-count] {
+		&:after {
+			display: inline-block;
+			position: relative;
+			top: auto;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			background-color: var(--clr-base);
+			flex-shrink: 0;
+		}
 	}
 	&:before {
 		content: "";
@@ -109,6 +121,29 @@ select.form-input:required:invalid {
 	font-size: 14px;
 	font-weight: bold;
 	padding: 0 2em;
+	&.button-tab {
+		width: 100%;
+		padding: 0 10px;
+		height: 43px;
+		border-radius: 10px;
+		background: transparent;
+		border: none;
+		font-size: 12px;
+		color: var(--clr-att);
+		font-weight: 400;
+		&:hover {
+			color: var(--clr-base);
+			background-color: transparent;
+		}
+		&.active {
+			background-color: #fff;
+			font-weight: 600;
+			color: var(--clr-base);
+			.button-title {
+				border-bottom-color: #fff;
+			}
+		}
+	}
 	&.button-filter-selected {
 		height: 30px;
 		border-radius: 15px;
@@ -152,10 +187,15 @@ select.form-input:required:invalid {
 			filter: var(--filterAttToLight) opacity(0.5);
 		}
 	}
+	&.button-text {
+		.button-title {
+			white-space: normal;
+		}
+	}
 	&:hover {
 		color: #fff;
-		background-color: var(--clr-att-second);
-		border-color: var(--clr-att-second);
+		background-color: var(--clr-base);
+		border-color: var(--clr-base);
 	}
 	&.button-dashed {
 		border-width: 2px;
@@ -182,6 +222,51 @@ select.form-input:required:invalid {
 			color: #fff;
 			.button-ico {
 				filter: brightness(0) invert(1);
+			}
+		}
+	}
+	&.button-succefull {
+		border-color: var(--clr-succefull);
+		background-color: var(--clr-succefull);
+		color: #fff;
+		&:hover {
+			border-color: var(--clr-succefull);
+			background-color: var(--clr-succefull);
+			color: #fff;
+			opacity: 0.8;
+		}
+	}
+	&.button-select-line {
+		padding: 0;
+		height: 24px;
+		font-size: 14px;
+		color: var(--clr-base);
+		background: none;
+		border-radius: 0;
+		border: none;
+		font-weight: 400;
+		padding: 0 30px 0 0;
+		.button-ico {
+			filter: none;
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			background: url(../img/icons/arrow-more.svg) center no-repeat;
+			background-size: 100% auto;
+			top: 50%;right: 0;
+			margin: -12px 0 0 0;
+			transition: all ease 0.2s;
+			rotate: 0deg;
+			filter: var(--filterAttToLight) opacity(0.8);
+			background-size: 32px auto;
+		}
+		&.active {
+			&:before {
+				rotate: 180deg;
 			}
 		}
 	}
@@ -288,6 +373,10 @@ select.form-input:required:invalid {
         margin: 0 10px;
         transition: all ease 0.2s;
 		filter: brightness(0) invert(1);
+		&.ico-color {
+			width: 20px;height: 20px;
+			border-radius: 50%;
+		}
         &:last-child {
             margin-right: 0;
         }
@@ -500,6 +589,18 @@ select.form-input:required:invalid {
 			background-size: 32px auto;
 		}
 	}
+	&.ico-trash {
+		&:before {
+			background-image: url(../img/icons/trash.svg);
+			background-size: 32px auto;
+		}
+	}
+	&.ico-edit {
+		&:before {
+			background-image: url(../img/icons/edit.svg);
+			background-size: 32px auto;
+		}
+	}
     &.ico-arrow {
         z-index: 20;
         cursor: pointer;
@@ -636,6 +737,11 @@ select.form-input:required:invalid {
 		}
 		&.active {
 			font-size: 28px;
+		}
+	}
+	.btn {
+		&.button-tab {
+			font-size: 14px;
 		}
 	}
 }

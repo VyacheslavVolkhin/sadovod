@@ -24,7 +24,7 @@
     <script src="./js/headermenu.js" defer></script>
 </head>
 
-<body>
+<body class="">
     <!-- wrap -->
     <div class="wrap">
 
@@ -6235,19 +6235,285 @@
 
         <!-- page -->
         <div class="page-full">
-            <br><br><br><br><br>
-            <ul style="font-size: 2em;line-height: 2;">
-                <li><a href="main.html">Main</a></li>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="card.html">Card</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="mylist.html">My list products</a></li>
-                <li><a href="delivery.html">Delivery</a></li>
-                <li>--------</li>
-            </ul>
-            <br><br><br><br><br>
+
+            <!--breadcrumbs-box-->
+            <div class="breadcrumbs-box">
+                <div class="links-inner-wrap">
+                    <ol class="menu">
+                        <li><a href="">Главная</a></li>
+                        <li><a href="">Корзина</a></li>
+                        <li><a href="">Оформление заказа</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!--/breadcrumbs-box-->
+
+            <!--content-outer-wrap-->
+            <div class="content-outer-wrap section-order">
+
+                <!--content-wrap-->
+                <div class="content-wrap">
+                    <!--order-title-box-->
+                    <div class="order-title-box">
+                        <a href="" class="btn-action-ico ico-back section-button"></a>
+                        <div class="title-wrap">
+                            <div class="section-title h2-title title-small">Оформление заказа</div>
+                        </div>
+                    </div>
+                    <!--/order-title-box-->
+
+                    <!--tabs-panel-box-->
+                    <div class="tabs-panel-box js-tabs-nav">
+                        <ul class="menu">
+                            <li>
+                                <a href="" class="btn button-tab active" data-tab="del01">
+                                    <div class="button-title title-border border-dashed">Пункт выдачи заказа</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="btn button-tab" data-tab="del02">
+                                    <div class="button-title title-border border-dashed">Транспортная компания</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/tabs-panel-box-->
+
+                    <!--tab-box-->
+                    <div class="tab-box js-tab-block" data-tab="del01">
+                        <!--map-box-->
+                        <div class="map-box">
+                            <div class="box-inner-wrap">
+                                <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=-eov8YMYfEHTrqs_Q1kKzkBJYs6HKSuT&width=100%25&height=100%25&lang=ru_RU&sourceType=constructor"></script>
+                            </div>
+                        </div>
+                        <!--/map-box-->
+                        <!--form-box-->
+                        <div class="form-box">
+                            <div class="frm-row">
+                                <div class="frm-field field-half">
+                                    <div class="frm-field-input" data-title="Выберите город">
+                                        <select class="form-input" required>
+                                            <option selected="">Москва</option>
+                                            <option>Пункт списка</option>
+                                            <option>Пункт списка</option>
+                                            <option>Пункт списка</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="frm-field field-half">
+                                    <div class="frm-field-input" data-title="Пункт выдачи заказа">
+                                        <select class="form-input" required>
+                                            <option selected="">ул. Смоленская 56/190</option>
+                                            <option>Пункт списка</option>
+                                            <option>Пункт списка</option>
+                                            <option>Пункт списка</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="frm-row">
+                                <div class="frm-field field-half">
+                                    <div class="frm-field-input" data-title="Ф.И.О.">
+                                        <input type="text" class="form-input" value="Морозов Алексей Сергеевич">
+                                    </div>
+                                </div>
+                                <div class="frm-field field-half">
+                                    <div class="frm-field-input" data-title="Телефон">
+                                        <input type="text" class="form-input" value="+ 7 (925) 427-22-25">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="frm-row">
+                                <div class="frm-field">
+                                    <div class="frm-field-input" data-title="Комментарий">
+                                        <textarea class="form-input">Привозите как можно скорее, я ожидаю всю товары в одной посылке. Спасибо...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/form-box-->
+
+                        <!--info-order-box-->
+                        <div class="info-order-box">
+                            <div class="box-inner-wrap">
+                                <div class="info-wrap">
+                                    <p>Заказ: <b>15 000.00 руб.</b></p>
+                                    <p>Орг. Сбор: <b>10% ( 3 000.00 руб.)</b></p>
+                                    <p>Берется для оплаты сборщика заказа, а также упаковка и доставка до TK/ПВЗ</p>
+                                    <p>Доставка: <b>Оплата при получении, на цену влияет вес и объем</b></p>
+                                </div>
+                                <div class="info-wrap">
+                                    <p>Итого: <b>18 000.00 руб.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/info-order-box-->
+                    </div>
+                    <!--/tab-box-->
+
+                    <!--tab-box-->
+                    <div class="tab-box js-tab-block" data-tab="del02">
+                        <!--select-box-->
+                        <div class="select-box">
+                            <div class="items-wrap">
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo01">
+                                        <label for="selectlogo01">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo01.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo02">
+                                        <label for="selectlogo02">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo02.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo03">
+                                        <label for="selectlogo03">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo03.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo04">
+                                        <label for="selectlogo04">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo04.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo05">
+                                        <label for="selectlogo05">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo05.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <div class="frm-select-logo">
+                                        <input type="radio" name="selectlogo" id="selectlogo06">
+                                        <label for="selectlogo06">
+                                            <div class="elm-photo photo-contain">
+                                                <img src="./img/logo06.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--/item wrap-->
+                            </div>
+                        </div>
+                        <!--/select-box-->
+                    </div>
+                    <!--/tab-box-->
+
+                </div>
+                <!--/content-wrap-->
+
+
+                <!--side-wrap-->
+                <div class="side-wrap">
+
+                    <!--info-total-box-->
+                    <div class="info-total-box">
+                        <div class="box-inner-wrap">
+                            <div class="total-inner-wrap">
+                                <div class="elm-row row-large">
+                                    <div class="row-title">Ваша корзина</div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" шт.">21 700</div>
+                                    </div>
+                                </div>
+                                <div class="elm-row row-large">
+                                    <div class="row-title">
+                                        Сумма
+                                        <div class="elm-helper js-clear-tippy-helper" data-title="Текст подсказки"></div>
+                                    </div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" ₽">23 230</div>
+                                    </div>
+                                </div>
+                                <div class="elm-row row-large">
+                                    <div class="row-title">Доставка</div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" ₽">17 230</div>
+                                    </div>
+                                </div>
+                                <div class="elm-row row-large">
+                                    <div class="row-title">Заказ</div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" ₽">25 230</div>
+                                    </div>
+                                </div>
+                                <div class="elm-row row-large">
+                                    <div class="row-title">Баланс</div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" ₽">265 230</div>
+                                    </div>
+                                </div>
+                                <div class="elm-row row-large row-main">
+                                    <div class="row-title">К оплате:</div>
+                                    <div class="row-value">
+                                        <div class="elm-price" data-unit=" ₽">230 330</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions-inner-wrap">
+                                <div class="action-wrap">
+                                    <a href="" class="btn">
+                                        <div class="button-title">Оформить заказ</div>
+                                    </a>
+                                </div>
+                                <div class="info-wrap">
+                                    <p>Нажимая «Оформить заказ», вы соглашаетесь с тем, что&nbsp;подтверждаете условия <a href="" class="link-main border-dashed">оплаты</a>, <a href="" class="link-main border-dashed">доставки</a> и использования<a href="" class="link-main border-dashed"> персональных данных</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/info-total-box-->
+
+                    <!--info-message-box-->
+                    <div class="info-message-box">
+                        <div class="box-inner-wrap">
+                            <p>Стоимость доставки зависит от объема и&nbsp;будет понятна после сбора заказа. <br>Для расчёта примерной стоимости <a href="" class="link-main"><b>напишите в чат...</b></a></p>
+                        </div>
+                    </div>
+                    <!--/info-message-box-->
+
+                </div>
+                <!--/side-wrap-->
+
+            </div>
+            <!--/content-outer-wrap-->
+
         </div>
         <!-- /page -->
 
