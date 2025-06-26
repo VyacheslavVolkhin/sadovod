@@ -207,6 +207,12 @@ select.form-input:required:invalid {
 			border-color: var(--clr-att);
 			background-color: transparent;
 			color: var(--clr-att);
+			.button-ico {
+				filter: none;
+			}
+		}
+		.button-ico {
+			filter: var(--filterAttToLight);
 		}
 	}
 	&.button-second {
@@ -550,14 +556,14 @@ select.form-input:required:invalid {
 	}
 	&.button-hover {
 		&:not(:hover) {
-			&:before {
+			&:before, &:after {
 				filter: var(--filterAttToLight);
 			}
 		}
 	}
 	&.button-hover-dark {
 		&:not(:hover) {
-			&:before {
+			&:before, &:after {
 				filter: var(--filterAttToLight);
 			}
 		}
@@ -589,6 +595,13 @@ select.form-input:required:invalid {
 			background-size: 32px auto;
 		}
 	}
+	&.ico-forward {
+		&:before {
+			background-image: url(../img/icons/arrow-back.svg);
+			background-size: 32px auto;
+			rotate: 180deg;
+		}
+	}
 	&.ico-trash {
 		&:before {
 			background-image: url(../img/icons/trash.svg);
@@ -599,6 +612,15 @@ select.form-input:required:invalid {
 		&:before {
 			background-image: url(../img/icons/edit.svg);
 			background-size: 32px auto;
+		}
+	}
+	&.ico-password {
+		&:before {
+			background-image: url(../img/icons/password-showed.svg);
+		}
+		&:after {
+			background-image: url(../img/icons/password-hidden.svg);
+			opacity: 0;
 		}
 	}
     &.ico-arrow {

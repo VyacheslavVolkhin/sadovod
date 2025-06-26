@@ -6,6 +6,31 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	//field-password
+	const passwordToggle = document.querySelectorAll(".js-password-toggle");
+	if (passwordToggle) {
+		for (let i = 0; i < passwordToggle.length; i++) {
+		passwordToggle[i
+			].addEventListener("click", function (e) {
+			if (this.classList.contains("active")) {
+			this.classList.remove("active");
+			const input = this.closest(".frm-field-password").querySelector(
+				".form-input"
+			);
+			input.type = "password";
+				} else {
+			this.classList.add("active");
+			const input = this.closest(".frm-field-password").querySelector(
+				".form-input"
+			);
+			input.type = "text";
+				}
+			e.preventDefault();
+			})
+		}
+	}
+
+
 	// filter actions
 	const filterButtonOpen = document.querySelector('.js-filter-open');
 	const filterButtonClose = document.querySelector('.js-filter-close');
@@ -126,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	buttonsTglOne.forEach(function(button) {
 		button.addEventListener('click', function(e) {
 			e.preventDefault();
-			let row = this.closest('.row');
+			let row = this.closest('.row-buttons');
 			row.querySelectorAll('.js-btn-tgl-one').forEach(function(btn) {
 				btn.classList.remove('active');
 			});
@@ -332,6 +357,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	element.addEventListener("click", function (e) {
 		document.querySelector(".popup-outer-box").classList.remove("active");
 		document.body.classList.add("popup-open");
+		for (i=0;i<popupsList.length;i++) {
+			popupsList[i
+				].classList.remove("active");
+			}
 
 		popupCurrent = this.getAttribute("data-popup");
 		document
